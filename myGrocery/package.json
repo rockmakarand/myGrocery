@@ -10,6 +10,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.11",
+    "expo-status-bar": "^1.4.0",
+    "native-drop-down": "^1.2.0",
     "react": "18.0.0",
     "react-native": "0.69.4",
     "react-native-paper": "^5.0.0-rc.4"
