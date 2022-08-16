@@ -18,10 +18,11 @@ const Search = () => {
             fontSize: 30,
             fontWeight: 'bold',
             marginRight: 40,
-            paddingTop:45,
+            paddingTop: 45,
             textAlign: 'center',
-            
           }}
+          clearIcon={true}
+          icon={true}
         />
       </Appbar.Header>
       <Searchbar
@@ -45,7 +46,7 @@ const Search = () => {
             backgroundColor: 'gray',
             marginLeft: 25,
             marginRight: 25,
-            color:'black'
+            color: 'black',
           }}
         />
         <View>
@@ -166,8 +167,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginLeft: 30,
     borderBottomWidth: 1,
-    color:'black'
-
+    color: 'black',
   },
 });
 
