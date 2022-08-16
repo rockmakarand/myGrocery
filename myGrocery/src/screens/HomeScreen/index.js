@@ -37,7 +37,9 @@ const Home = ({navigation}) => {
           >
           Promotions
         </Text>
-        <Text style={{fontStyle: 'italic', marginLeft: 15, marginTop: 3, color:'black'}}>
+        <Text style={{fontStyle: 'italic', marginLeft: 15, marginTop: 3, color:'black'}}
+                  onPress={()=>navigation.navigate('Search')}
+                  >
           For our valued customers
         </Text>
         <ScrollView horizontal={true}>
