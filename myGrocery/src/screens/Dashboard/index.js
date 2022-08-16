@@ -4,7 +4,7 @@ import React from 'react';
 import {StyleSheet, Text, View,ScrollView, TouchableOpacity} from 'react-native';
 import navigation from '@react-navigation/native';
 
-const Dashboard = () => {
+const Dashboard = ({navigation}) => {
   return (
     <ScrollView>
       <View
@@ -26,13 +26,27 @@ const Dashboard = () => {
           Dashboard
         </Text>
       </View>
+     
 
+      <Text
+          style={{
+            fontSize: 30,
+            
+            paddingTop: 30,
+            fontWeight: 'bold',
+            color:'black',
+            textAlign:'center'
+          }}>
+         Your Name
+        </Text>
+        <Text>{'\n'}</Text>
+
+   
       <TouchableOpacity
         style={{
           width: 300,
           height: 50,
           borderRadius: 40,
-          marginTop: 120,
           backgroundColor: '#24ce85',
           alignItems: 'center',
           alignSelf: 'center',
@@ -95,9 +109,10 @@ const Dashboard = () => {
           alignSelf: 'center',
           textAlign: 'center',
         }}
-        // onPress={() => navigation.navigate('contact')}
+        onPress={() => navigation.navigate('About')}
       >
-        <Text style={{color: 'white', fontSize: 20, padding: 10}}>
+        <Text style={{color: 'white', fontSize: 20, padding: 10}}         
+>
           About Us
         </Text>
       </TouchableOpacity>
