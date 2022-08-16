@@ -42,7 +42,8 @@ const About = ({navigation}) => {
             marginLeft: -270,
             marginTop: -30,
             color:'black'
-          }}>
+          }}
+          onPress={() => navigation.goBack()}>
           Back
         </Text>
       </View>
