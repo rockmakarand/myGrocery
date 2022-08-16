@@ -1,52 +1,57 @@
-import React from 'react';
-import {ScrollView} from 'react-native';
+import React, {useState} from 'react';
+import {ScrollView, TextInput} from 'react-native';
 import {StyleSheet, Text, View} from 'react-native';
-import {Appbar, Searchbar, Divider} from 'react-native-paper';
+import {Button, Divider} from 'react-native-paper';
 
-const Search = () => {
-  const [searchQuery, setSearchQuery] = React.useState('');
-
-  const onChangeSearch = query => setSearchQuery(query);
+const Search = ({navigation}) => {
+  const [val, setVal] = useState('');
   return (
-    <View style={styles.container}>
-      <Appbar.Header style={{backgroundColor: '#f6f6f6'}}>
-        <Appbar.BackAction />
-
-        <Appbar.Content
-          title="Search"
-          titleStyle={{
-            fontSize: 30,
-            fontWeight: 'bold',
-            marginRight: 40,
-            paddingTop: 45,
-            textAlign: 'center',
-          }}
-          clearIcon={true}
-          icon={true}
-        />
-      </Appbar.Header>
-      <Searchbar
-        placeholder="Search"
-        onChangeText={onChangeSearch}
-        value={searchQuery}
+    <ScrollView style={styles.container}>
+      <View
         style={{
-          borderRadius: 50,
-          marginTop: 50,
-          marginLeft: 10,
-          marginRight: 10,
-        }}
-      />
-      <ScrollView style={styles.scroll}>
-        <View>
-          <Text style={styles.card}>Search Results</Text>
-        </View>
-        <Divider
+          flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          marginTop: 60,
+        }}>
+        <Button
+          mode="default"
+          textColor="#01bcb5"
+          onPress={() => navigation.goBack()}>
+          Back
+        </Button>
+        <Text
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 25,
-            marginRight: 25,
+            textAlign: 'center',
+            fontSize: 35,
+            marginLeft: 60,
+            marginRight: 50,
+            fontWeight: 'bold',
             color: 'black',
+          }}>
+          Search
+        </Text>
+        <Button mode="default" textColor="#01bcb5" onPress={() => setVal('')}>
+          Clear
+        </Button>
+      </View>
+      <TextInput
+        value={val}
+        onChangeText={setVal}
+        style={styles.input}
+        placeholder="Search"
+        placeholderTextColor="black"
+        textAlign="left"
+      />
+      <View style={styles.scroll}>
+        <Text style={styles.card}>Search Results</Text>
+        <Divider
+          style={{
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -54,10 +59,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -65,10 +71,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -76,10 +83,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -87,10 +95,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -98,10 +107,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -109,10 +119,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -120,10 +131,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -131,10 +143,11 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 320,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginTop: 10,
           }}
         />
         <View>
@@ -142,20 +155,22 @@ const Search = () => {
         </View>
         <Divider
           style={{
-            height: 1,
-            backgroundColor: 'gray',
-            marginLeft: 18,
-            marginRight: 18,
+            height: 2,
+            width: 100,
+            backgroundColor: '#edeced',
+            marginLeft: 20,
+            marginRight: 10,
+            marginTop: 10,
           }}
         />
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#f8f8f8',
+    backgroundColor: '#fffffe',
     height: '100%',
   },
   title: {
@@ -164,10 +179,23 @@ const styles = StyleSheet.create({
   },
   card: {
     marginTop: 40,
-    fontSize: 18,
-    marginLeft: 30,
-    borderBottomWidth: 1,
+    fontSize: 15,
+    marginLeft: 20,
     color: 'black',
+    fontWeight: 'bold',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#edeced',
+    width: 320,
+    height: 50,
+    borderRadius: 25,
+    marginLeft: 17,
+    marginTop: 40,
+    backgroundColor: '#f5f6f6',
+    paddingLeft: 20,
+    fontSize: 16,
+    color: '#bdbdbd',
   },
 });
 
