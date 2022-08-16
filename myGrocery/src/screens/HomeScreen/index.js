@@ -1,28 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {Pressable, ScrollView, TextInput} from 'react-native';
-import {StyleSheet, Text, View, Image} from 'react-native';
-import {Button, Searchbar, ToggleButton} from 'react-native-paper';
+import { Pressable, ScrollView, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Button, Searchbar, ToggleButton } from 'react-native-paper';
 import ModalDropdown from 'native-drop-down';
-import {StatusBar} from 'expo-status-bar';
-import {Icon} from 'react-native-vector-icons/Icon';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { StatusBar } from 'expo-status-bar';
+import { Icon } from 'react-native-vector-icons/Icon';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   const [value, setValue] = React.useState('left');
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={{flex: 1, flexDirection: 'row', marginTop: 30}}>
+        <View style={{ flex: 1, flexDirection: 'row', marginTop: 30 }}>
           <Text style={styles.title}>myGrocery</Text>
           <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
             <Image
               source={require('../../assets/h.jpeg')}
-              style={{width: 30, height: 25, marginTop: 45, marginLeft: 50}}
+              style={{ width: 30, height: 25, marginTop: 45, marginLeft: 50 }}
             />
           </TouchableOpacity>
         </View>
-        <TextInput style={styles.input} placeholder="Seach" placeholderTextColor='black' textAlign="left" />
+        <TextInput style={styles.input} placeholder="Search" placeholderTextColor='black' textAlign="left" />
       </View>
       <View>
         <Text
@@ -33,7 +33,7 @@ const Home = ({navigation}) => {
             marginTop: 15,
             color: 'black',
           }}
-          >
+        >
           Promotions
         </Text>
         <Text
@@ -48,12 +48,12 @@ const Home = ({navigation}) => {
         </Text>
         <ScrollView horizontal={true}>
           <Image
-            style={{width: 370, height: 150, marginTop: 20}}
-            source={require('../../assets/z.jpeg')}
+            style={{ width: 370, height: 150, marginTop: 20 }}
+            source={require('../../assets/ads.png')}
           />
           <Image
-            style={{width: 370, height: 150, marginTop: 20}}
-            source={require('../../assets/s.jpeg')}
+            style={{ width: 370, height: 150, marginTop: 20 }}
+            source={require('../../assets/z.jpeg')}
           />
         </ScrollView>
         <Text style={styles.header}>myGrocery Departments</Text>
@@ -70,17 +70,17 @@ const Home = ({navigation}) => {
       <View style={styles.items}>
         <View>
           <Image
-            style={{width: 130, height: 130, marginLeft: 30, marginTop: 20}}
+            style={{ width: 130, height: 130, marginLeft: 30, marginTop: 20 }}
             source={require('../../assets/item_one.png')}
           />
           <ModalDropdown
-            style={{width: 130, marginLeft: 30, marginTop: 20}}
+            style={{ width: 130, marginLeft: 30, marginTop: 20 }}
             textStyle={{
               fontSize: 20,
               fontWeight: 'bold',
               color: '#3498DB',
             }}
-            dropdownStyle={{width: 130, height: 130}}
+            dropdownStyle={{ width: 130, height: 130 }}
             dropdownTextStyle={{
               fontSize: 20,
               fontWeight: 'bold',
@@ -94,17 +94,17 @@ const Home = ({navigation}) => {
         </View>
         <View>
           <Image
-            style={{width: 130, height: 130, marginLeft: 60, marginTop: 20}}
+            style={{ width: 130, height: 130, marginLeft: 60, marginTop: 20 }}
             source={require('../../assets/s.jpeg')}
           />
           <ModalDropdown
-            style={{width: 130, marginLeft: 60, marginTop: 20}}
+            style={{ width: 130, marginLeft: 60, marginTop: 20 }}
             textStyle={{
               fontSize: 20,
               fontWeight: 'bold',
               color: '#3498DB',
             }}
-            dropdownStyle={{width: 130, height: 130}}
+            dropdownStyle={{ width: 130, height: 130 }}
             dropdownTextStyle={{
               fontSize: 20,
               fontWeight: 'bold',
@@ -115,7 +115,7 @@ const Home = ({navigation}) => {
             options={['Cakes', 'Pastries', 'Desserts']}
           />
           <Image
-            style={{width: 20, height: 10, marginTop: -20, marginLeft: 150}}
+            style={{ width: 20, height: 10, marginTop: -20, marginLeft: 150 }}
             source={require('../../assets/l.png')}
           />
         </View>
@@ -123,17 +123,17 @@ const Home = ({navigation}) => {
       <View style={styles.items}>
         <View>
           <Image
-            style={{width: 130, height: 130, marginLeft: 30, marginTop: 20}}
+            style={{ width: 130, height: 130, marginLeft: 30, marginTop: 20 }}
             source={require('../../assets/e.jpeg')}
           />
           <ModalDropdown
-            style={{width: 130, marginLeft: 30, marginTop: 20}}
+            style={{ width: 130, marginLeft: 30, marginTop: 20 }}
             textStyle={{
               fontSize: 20,
               fontWeight: 'bold',
               color: '#3498DB',
             }}
-            dropdownStyle={{width: 130, height: 130}}
+            dropdownStyle={{ width: 130, height: 130 }}
             dropdownTextStyle={{
               fontSize: 20,
               fontWeight: 'bold',
@@ -145,22 +145,22 @@ const Home = ({navigation}) => {
           />
         </View>
         <Image
-          style={{width: 20, height: 10, marginTop: -20, marginLeft: -20}}
+          style={{ width: 20, height: 10, marginTop: -20, marginLeft: -20 }}
           source={require('../../assets/l.png')}
         />
         <View>
           <Image
-            style={{width: 130, height: 130, marginLeft: 60, marginTop: 20}}
+            style={{ width: 130, height: 130, marginLeft: 60, marginTop: 20 }}
             source={require('../../assets/item_two.png')}
           />
           <ModalDropdown
-            style={{width: 130, marginLeft: 60, marginTop: 20}}
+            style={{ width: 130, marginLeft: 60, marginTop: 20 }}
             textStyle={{
               fontSize: 20,
               fontWeight: 'bold',
               color: '#3498DB',
             }}
-            dropdownStyle={{width: 130, height: 130}}
+            dropdownStyle={{ width: 130, height: 130 }}
             dropdownTextStyle={{
               fontSize: 20,
               fontWeight: 'bold',
@@ -171,7 +171,7 @@ const Home = ({navigation}) => {
             options={['Cakes', 'Pastries', 'Desserts']}
           />
           <Image
-            style={{width: 20, height: 10, marginTop: -20, marginLeft: -20}}
+            style={{ width: 20, height: 10, marginTop: -20, marginLeft: -20 }}
             source={require('../../assets/l.png')}
           />
         </View>

@@ -1,17 +1,17 @@
 /* eslint-disable prettier/prettier */
-import {StatusBar} from 'expo-status-bar';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {StyleSheet, Text, View,ScrollView, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import navigation from '@react-navigation/native';
 
-const Dashboard = ({navigation}) => {
+const Dashboard = ({ navigation }) => {
   return (
     <ScrollView>
       <View
         style={{
           backgroundColor: '#24ce85',
           height: 150,
-          width: 376,
+          width: Dimensions.get('screen').width,
           alignItems: 'center',
           alignSelf: 'center',
         }}>
@@ -21,27 +21,27 @@ const Dashboard = ({navigation}) => {
             backgroundColor: '#24ce85',
             paddingTop: 60,
             fontWeight: 'bold',
-            color:'black'
+            color: 'black'
           }}>
           Dashboard
         </Text>
       </View>
-     
+
 
       <Text
-          style={{
-            fontSize: 30,
-            
-            paddingTop: 30,
-            fontWeight: 'bold',
-            color:'black',
-            textAlign:'center'
-          }}>
-         Your Name
-        </Text>
-        <Text>{'\n'}</Text>
+        style={{
+          fontSize: 30,
 
-   
+          paddingTop: 30,
+          fontWeight: 'bold',
+          color: 'black',
+          textAlign: 'center'
+        }}>
+        Your Name
+      </Text>
+      <Text>{'\n'}</Text>
+
+
       <TouchableOpacity
         style={{
           width: 300,
@@ -52,9 +52,9 @@ const Dashboard = ({navigation}) => {
           alignSelf: 'center',
           textAlign: 'center',
         }}
-        // onPress={() => navigation.navigate('contact')}
+      // onPress={() => navigation.navigate('contact')}
       >
-        <Text style={{color: 'white', fontSize: 20, padding: 10}}>
+        <Text style={{ color: 'white', fontSize: 20, padding: 10 }}>
           Order History
         </Text>
       </TouchableOpacity>
@@ -71,9 +71,9 @@ const Dashboard = ({navigation}) => {
           alignSelf: 'center',
           textAlign: 'center',
         }}
-        // onPress={() => navigation.navigate('contact')}
+      // onPress={() => navigation.navigate('contact')}
       >
-        <Text style={{color: 'white', fontSize: 20, padding: 10}}>
+        <Text style={{ color: 'white', fontSize: 20, padding: 10 }}>
           Edit Your Profile
         </Text>
       </TouchableOpacity>
@@ -90,9 +90,9 @@ const Dashboard = ({navigation}) => {
           alignSelf: 'center',
           textAlign: 'center',
         }}
-        // onPress={() => navigation.navigate('contact')}
+      // onPress={() => navigation.navigate('contact')}
       >
-        <Text style={{color: 'white', fontSize: 20, padding: 10}}>
+        <Text style={{ color: 'white', fontSize: 20, padding: 10 }}>
           Edit Your Password
         </Text>
       </TouchableOpacity>
@@ -111,8 +111,8 @@ const Dashboard = ({navigation}) => {
         }}
         onPress={() => navigation.navigate('About')}
       >
-        <Text style={{color: 'white', fontSize: 20, padding: 10}}         
->
+        <Text style={{ color: 'white', fontSize: 20, padding: 10 }}
+        >
           About Us
         </Text>
       </TouchableOpacity>
@@ -129,9 +129,9 @@ const Dashboard = ({navigation}) => {
           alignSelf: 'center',
           textAlign: 'center',
         }}
-        // onPress={() => navigation.navigate('contact')}
+      // onPress={() => navigation.navigate('contact')}
       >
-        <Text style={{color: 'white', fontSize: 20, padding: 10}}>Log Out</Text>
+        <Text style={{ color: 'white', fontSize: 20, padding: 10 }}>Log Out</Text>
       </TouchableOpacity>
       <Text>{'\n'}</Text>
       <StatusBar style="auto" />
