@@ -18,7 +18,7 @@ const Search = () => {
             fontSize: 30,
             fontWeight: 'bold',
             marginRight: 40,
-            paddingTop:30,
+            paddingTop:45,
             textAlign: 'center',
             
           }}
