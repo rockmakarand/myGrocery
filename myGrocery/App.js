@@ -5,6 +5,7 @@ import Search from './src/screens/SearchScreen';
 import Home from './src/screens/HomeScreen';
 import About from './src/screens/AboutScreen';
 import {NavigationContainer} from '@react-navigation/native';
+
 // import {createStackNavigator} from '@react-navigation/native-stack';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -18,9 +19,13 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+      screenOptions={{headerShown:false}}>
+
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="DashBoard" component={Dashboard} />
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="About" component={About} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
