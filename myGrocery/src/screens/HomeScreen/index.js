@@ -1,25 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {ScrollView} from 'react-native';
+import {Pressable, ScrollView, TextInput} from 'react-native';
 import {StyleSheet, Text, View, Image} from 'react-native';
 import {Button, Searchbar, ToggleButton} from 'react-native-paper';
 import ModalDropdown from 'native-drop-down';
 import {StatusBar} from 'expo-status-bar';
 import {Icon} from 'react-native-vector-icons/Icon';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const Home = ({navigation}) => {
   const [value, setValue] = React.useState('left');
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.title}>myGrocery</Text>
-        <TouchableOpacity onPress={()=>navigation.navigate("Dashboard")}>
-          <Image source={require('../../assets/h.jpeg')} style={{width:30, height:15, marginLeft:320,}}></Image>
-        </TouchableOpacity>
-        
-        
-        <Searchbar style={styles.search} clearIcon={true} icon={true} />
+        <View style={{flex: 1, flexDirection: 'row', marginTop: 30}}>
+          <Text style={styles.title}>myGrocery</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+            <Image
+              source={require('../../assets/h.jpeg')}
+              style={{width: 30, height: 25, marginTop: 45, marginLeft: 50}}
+            />
+          </TouchableOpacity>
+        </View>
+        <TextInput style={styles.input} placeholder="Seach" placeholderTextColor='black' textAlign="left" />
       </View>
       <View>
         <Text
@@ -30,7 +33,7 @@ const Home = ({navigation}) => {
             marginTop: 15,
             color: 'black',
           }}
-          onPress={() => navigation.navigate('About')}>
+          >
           Promotions
         </Text>
         <Text
@@ -45,12 +48,12 @@ const Home = ({navigation}) => {
         </Text>
         <ScrollView horizontal={true}>
           <Image
-            style={{width: 370, height: 150, marginLeft: 10, marginTop: 20}}
-            source={require('../../assets/icon.png')}
+            style={{width: 370, height: 150, marginTop: 20}}
+            source={require('../../assets/z.jpeg')}
           />
           <Image
-            style={{width: 370, height: 150, marginLeft: 10, marginTop: 20}}
-            source={require('../../assets/icon.png')}
+            style={{width: 370, height: 150, marginTop: 20}}
+            source={require('../../assets/s.jpeg')}
           />
         </ScrollView>
         <Text style={styles.header}>myGrocery Departments</Text>
@@ -92,7 +95,7 @@ const Home = ({navigation}) => {
         <View>
           <Image
             style={{width: 130, height: 130, marginLeft: 60, marginTop: 20}}
-            source={require('../../assets/item_two.png')}
+            source={require('../../assets/s.jpeg')}
           />
           <ModalDropdown
             style={{width: 130, marginLeft: 60, marginTop: 20}}
@@ -111,13 +114,17 @@ const Home = ({navigation}) => {
             showsVerticalScrollIndicator={true}
             options={['Cakes', 'Pastries', 'Desserts']}
           />
+          <Image
+            style={{width: 20, height: 10, marginTop: -20, marginLeft: 150}}
+            source={require('../../assets/l.png')}
+          />
         </View>
       </View>
       <View style={styles.items}>
         <View>
           <Image
             style={{width: 130, height: 130, marginLeft: 30, marginTop: 20}}
-            source={require('../../assets/item_two.png')}
+            source={require('../../assets/e.jpeg')}
           />
           <ModalDropdown
             style={{width: 130, marginLeft: 30, marginTop: 20}}
@@ -137,54 +144,10 @@ const Home = ({navigation}) => {
             options={['Cakes', 'Pastries', 'Desserts']}
           />
         </View>
-        <View>
-          <Image
-            style={{width: 130, height: 130, marginLeft: 60, marginTop: 20}}
-            source={require('../../assets/item_one.png')}
-          />
-          <ModalDropdown
-            style={{width: 130, marginLeft: 60, marginTop: 20}}
-            textStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: '#3498DB',
-            }}
-            dropdownStyle={{width: 130, height: 130}}
-            dropdownTextStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: 'black',
-            }}
-            defaultValue="Bakery"
-            showsVerticalScrollIndicator={true}
-            options={['Cakes', 'Pastries', 'Desserts']}
-          />
-        </View>
-      </View>
-      <View style={styles.items}>
-        <View>
-          <Image
-            style={{width: 130, height: 130, marginLeft: 30, marginTop: 20}}
-            source={require('../../assets/item_one.png')}
-          />
-          <ModalDropdown
-            style={{width: 130, marginLeft: 30, marginTop: 20}}
-            textStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: '#3498DB',
-            }}
-            dropdownStyle={{width: 130, height: 130}}
-            dropdownTextStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: 'black',
-            }}
-            defaultValue="Bakery"
-            showsVerticalScrollIndicator={true}
-            options={['Cakes', 'Pastries', 'Desserts']}
-          />
-        </View>
+        <Image
+          style={{width: 20, height: 10, marginTop: -20, marginLeft: -20}}
+          source={require('../../assets/l.png')}
+        />
         <View>
           <Image
             style={{width: 130, height: 130, marginLeft: 60, marginTop: 20}}
@@ -207,56 +170,13 @@ const Home = ({navigation}) => {
             showsVerticalScrollIndicator={true}
             options={['Cakes', 'Pastries', 'Desserts']}
           />
-        </View>
-      </View>
-      <View style={styles.items}>
-        <View>
           <Image
-            style={{width: 130, height: 130, marginLeft: 30, marginTop: 20}}
-            source={require('../../assets/item_two.png')}
-          />
-          <ModalDropdown
-            style={{width: 130, marginLeft: 30, marginTop: 20}}
-            textStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: '#3498DB',
-            }}
-            dropdownStyle={{width: 130, height: 130}}
-            dropdownTextStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: 'black',
-            }}
-            defaultValue="Bakery"
-            showsVerticalScrollIndicator={true}
-            options={['Cakes', 'Pastries', 'Desserts']}
-          />
-        </View>
-        <View>
-          <Image
-            style={{width: 130, height: 130, marginLeft: 60, marginTop: 20}}
-            source={require('../../assets/item_one.png')}
-          />
-          <ModalDropdown
-            style={{width: 130, marginLeft: 60, marginTop: 20}}
-            textStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: '#3498DB',
-            }}
-            dropdownStyle={{width: 130, height: 130}}
-            dropdownTextStyle={{
-              fontSize: 20,
-              fontWeight: 'bold',
-              color: 'black',
-            }}
-            defaultValue="Bakery"
-            showsVerticalScrollIndicator={true}
-            options={['Cakes', 'Pastries', 'Desserts']}
+            style={{width: 20, height: 10, marginTop: -20, marginLeft: -20}}
+            source={require('../../assets/l.png')}
           />
         </View>
       </View>
+
       <StatusBar style="auto" />
     </ScrollView>
   );
@@ -264,9 +184,10 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 165,
+    height: 195,
     backgroundColor: '#20cf85',
     color: 'black',
+    paddingBottom: 20
   },
   containerBox: {
     flex: 1,
@@ -276,16 +197,16 @@ const styles = StyleSheet.create({
   title: {
     textAlign: 'center',
     marginTop: 40,
-    marginBottom: 10,
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
+    marginLeft: 100,
   },
   search: {
     borderRadius: 50,
     marginLeft: 10,
     marginRight: 10,
-    marginTop: 10,
+    marginTop: -30,
     height: 40,
     color: 'black',
   },
@@ -299,6 +220,18 @@ const styles = StyleSheet.create({
   items: {
     flex: 1,
     flexDirection: 'row',
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#edeced',
+    width: 320,
+    height: 50,
+    borderRadius: 25,
+    marginLeft: 20,
+    backgroundColor: '#f5f6f6',
+    paddingLeft: 20,
+    fontSize: 16,
+    color: '#bdbdbd',
   },
 });
 
