@@ -1,15 +1,15 @@
 import {StatusBar} from 'expo-status-bar';
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View,ScrollView, TouchableOpacity} from 'react-native';
 import navigation from '@react-navigation/native';
 
 const Dashboard = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView>
       <View
         style={{
           backgroundColor: '#24ce85',
-          height: 129,
+          height: 150,
           width: 376,
           alignItems: 'center',
           alignSelf: 'center',
@@ -18,13 +18,13 @@ const Dashboard = () => {
           style={{
             fontSize: 35,
             backgroundColor: '#24ce85',
-            paddingTop: 50,
+            paddingTop: 60,
             fontWeight: 'bold',
+            color:'black'
           }}>
           Dashboard
         </Text>
       </View>
-      <Text>{'\n'}</Text>
 
       <TouchableOpacity
         style={{
@@ -117,8 +117,10 @@ const Dashboard = () => {
       >
         <Text style={{color: 'white', fontSize: 20, padding: 10}}>Log Out</Text>
       </TouchableOpacity>
+      <Text>{'\n'}</Text>
       <StatusBar style="auto" />
-    </View>
+      <Text>{'\n'}</Text>
+    </ScrollView>
   );
 };
 
