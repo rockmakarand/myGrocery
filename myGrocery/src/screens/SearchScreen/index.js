@@ -11,13 +11,16 @@ const Search = () => {
     <View style={styles.container}>
       <Appbar.Header style={{backgroundColor: '#f6f6f6'}}>
         <Appbar.BackAction />
+
         <Appbar.Content
           title="Search"
           titleStyle={{
             fontSize: 30,
             fontWeight: 'bold',
             marginRight: 40,
+            paddingTop:30,
             textAlign: 'center',
+            
           }}
         />
       </Appbar.Header>
@@ -42,6 +45,7 @@ const Search = () => {
             backgroundColor: 'gray',
             marginLeft: 25,
             marginRight: 25,
+            color:'black'
           }}
         />
         <View>
@@ -162,6 +166,8 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginLeft: 30,
     borderBottomWidth: 1,
+    color:'black'
+
   },
 });
 
