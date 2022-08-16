@@ -5,9 +5,15 @@ import Search from './src/screens/SearchScreen';
 import Home from './src/screens/HomeScreen';
 import About from './src/screens/AboutScreen';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/native-stack';
+// import {createStackNavigator} from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
+
+import 'react-native-gesture-handler';
+
+// const Stack = createStackNavigator();
 
 const Stack = createStackNavigator();
+
 
 const App = () => {
   return (
