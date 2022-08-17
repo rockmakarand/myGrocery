@@ -7,6 +7,7 @@ import { getFocusedRouteNameFromRoute, NavigationContainer } from '@react-naviga
 
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import 'react-native-gesture-handler';
 import Profile from './src/screens/ProfileScreen';
@@ -16,6 +17,26 @@ import { Text, View } from 'react-native';
 const Tab = createBottomTabNavigator();
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigator = () => {
+  return (
+    <Drawer.Navigator
+      useLegacyImplementation
+      screenOptions={{ drawerPosition: 'left', headerShown: false, drawerStyle: { width: 350 } }}
+      // screenOptions={{draw}}
+      // screenOptions={{
+      //   drawerPosition: 'right'
+      // }}
+      drawerContent={(props) => <Dashboard {...props} />}
+    >
+      <Drawer.Screen
+        name="BottomTab"
+        component={BottomTabs}
+      />
+    </Drawer.Navigator >
+  )
+}
 
 const CatalogueScreens = () => {
   return (
@@ -42,7 +63,7 @@ const BottomTabs = () => {
         name="Catalogue"
         component={CatalogueScreens}
         options={({ route }) => ({
-          tabBarStyle: getTabBarStyle(route),
+          // tabBarStyle: getTabBarStyle(route),
           title: '',
           tabBarIcon: ({ size, focused, color }) => {
             return (
@@ -116,8 +137,17 @@ const BottomTabs = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <BottomTabs />
-    </NavigationContainer>
+      {/* <BottomTabs /> */}
+      <DrawerNavigator />
+      {/* 
+      <Drawer.Navigator useLegacyImplementation initialRouteName="CatalogueScreens">
+        <Drawer.Screen
+          name="CatalogueScreens"
+          options={{ drawerLabel: 'First page Option' }}
+          component={CatalogueScreens}
+        /> */}
+      {/* </Drawer.Navigator> */}
+    </NavigationContainer >
   );
 };
 

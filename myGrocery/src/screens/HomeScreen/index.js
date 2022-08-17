@@ -13,14 +13,15 @@ const Home = ({ navigation }) => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <View style={{ flex: 1, flexDirection: 'row', marginTop: 30 }}>
-          <Text style={styles.title}>myGrocery</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+        <View style={{ flex: 1, flexDirection: 'row', marginTop: 30, alignItems: 'center', marginBottom: 10 }}>
+          <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
             <Image
               source={require('../../assets/h.jpeg')}
-              style={{ width: 30, height: 25, marginTop: 45, marginLeft: 50 }}
+              style={{ width: 30, height: 25, marginTop: 45, marginLeft: 40 }}
             />
           </TouchableOpacity>
+          <Text style={styles.title}>myGrocery</Text>
+
         </View>
         <TextInput style={styles.input} placeholder="Search" placeholderTextColor='black' textAlign="left" />
       </View>
@@ -110,7 +111,7 @@ const Home = ({ navigation }) => {
               fontWeight: 'bold',
               color: 'black',
             }}
-            defaultValue="Bakery"
+            defaultValue="Chilled"
             showsVerticalScrollIndicator={true}
             options={['Cakes', 'Pastries', 'Desserts']}
           />
@@ -139,7 +140,7 @@ const Home = ({ navigation }) => {
               fontWeight: 'bold',
               color: 'black',
             }}
-            defaultValue="Bakery"
+            defaultValue="Vegetables"
             showsVerticalScrollIndicator={true}
             options={['Cakes', 'Pastries', 'Desserts']}
           />
@@ -166,7 +167,7 @@ const Home = ({ navigation }) => {
               fontWeight: 'bold',
               color: 'black',
             }}
-            defaultValue="Bakery"
+            defaultValue="Fruits"
             showsVerticalScrollIndicator={true}
             options={['Cakes', 'Pastries', 'Desserts']}
           />
@@ -200,7 +201,7 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     color: 'black',
-    marginLeft: 100,
+    marginLeft: 60,
   },
   search: {
     borderRadius: 50,
